@@ -1,12 +1,3 @@
-var $jscomp = $jscomp || {};
-$jscomp.scope = {};
-$jscomp.createTemplateTagFirstArg = function(f) {
-  return f.raw = f;
-};
-$jscomp.createTemplateTagFirstArgWithRaw = function(f, w) {
-  f.raw = w;
-  return f;
-};
 var popupContainer = document.createElement("div");
 popupContainer.style.position = "fixed";
 popupContainer.style.top = "0";
