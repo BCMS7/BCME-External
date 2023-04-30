@@ -26,10 +26,10 @@ const welcomeMessage = document.createElement("h2");
 (welcomeMessage.innerText =
   "Welcome to BCME, The First Right Click BC Extension"),
   popupContent.appendChild(welcomeMessage);
-const instructionMessage = document.createElement("p");
-(instructionMessage.innerText =
+const description = document.createElement("p");
+(description.innerText =
   "Accept our License Agreement and Privacy Policy below to get started"),
-  popupContent.appendChild(instructionMessage);
+  popupContent.appendChild(description);
 const buttonsContainer = document.createElement("div");
 (buttonsContainer.style.display = "flex"),
   (buttonsContainer.style.justifyContent = "space-between");
@@ -71,7 +71,6 @@ const checkboxText = document.createTextNode("Limited Analytics"),
   checkboxContainer.appendChild(infoIcon),
   buttonsContainer.appendChild(checkboxContainer);
 const acceptButton = document.createElement("button");
-async function Fdebug() {}
 (acceptButton.innerText = "Accept & Continue"),
   (acceptButton.style.backgroundColor = "#28a745"),
   (acceptButton.style.color = "#fff"),
@@ -84,7 +83,45 @@ async function Fdebug() {}
       document.body.removeChild(popupContainer);
   }),
   buttonsContainer.appendChild(acceptButton),
-  popupContent.appendChild(buttonsContainer),
+  popupContent.appendChild(buttonsContainer);
+const iconsContainer = document.createElement("div");
+(iconsContainer.style.position = "absolute"),
+  (iconsContainer.style.top = "1rem"),
+  (iconsContainer.style.right = "1rem"),
+  (iconsContainer.style.display = "flex"),
+  (iconsContainer.style.gap = "1rem");
+const discordIcon = document.createElement("a");
+(discordIcon.href = "https://discord.com/invite/v3JBjyS4mx"),
+  (discordIcon.target = "_blank"),
+  (discordIcon.style.display = "flex"),
+  (discordIcon.style.justifyContent = "center"),
+  (discordIcon.style.alignItems = "center"),
+  (discordIcon.style.width = "40px"),
+  (discordIcon.style.height = "40px"),
+  (discordIcon.style.backgroundColor = "#ccc"),
+  (discordIcon.style.borderRadius = "50%"),
+  (discordIcon.style.backgroundImage =
+    "url(https://media.discordapp.net/attachments/781749229331939328/1102303883340030042/discord-logo.png?width=922&height=930)"),
+  (discordIcon.style.backgroundRepeat = "no-repeat"),
+  (discordIcon.style.backgroundSize = "contain"),
+  iconsContainer.appendChild(discordIcon);
+const websiteIcon = document.createElement("a");
+async function Fdebug() {}
+(websiteIcon.href = "https://bcm.site.live/bcme/"),
+  (websiteIcon.target = "_blank"),
+  (websiteIcon.style.display = "flex"),
+  (websiteIcon.style.justifyContent = "center"),
+  (websiteIcon.style.alignItems = "center"),
+  (websiteIcon.style.width = "40px"),
+  (websiteIcon.style.height = "40px"),
+  (websiteIcon.style.backgroundColor = "#ccc"),
+  (websiteIcon.style.borderRadius = "50%"),
+  (websiteIcon.style.backgroundImage =
+    "url(https://media.discordapp.net/attachments/781749229331939328/1102303883658809344/1024px-Globe_icon.svg.png?width=1114&height=1114)"),
+  (websiteIcon.style.backgroundRepeat = "no-repeat"),
+  (websiteIcon.style.backgroundSize = "contain"),
+  iconsContainer.appendChild(websiteIcon),
+  popupContent.appendChild(iconsContainer),
   popupContainer.appendChild(popupContent),
   "true" !== localStorage.getItem("bcme-accepted") &&
     document.body.appendChild(popupContainer),
