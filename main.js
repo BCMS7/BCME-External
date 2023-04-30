@@ -82,449 +82,426 @@ popupContent.appendChild(buttonsContainer);
 popupContainer.appendChild(popupContent);
 "true" !== localStorage.getItem("bcme-accepted") && document.body.appendChild(popupContainer);
 "true" === localStorage.getItem("optAnalytics") && (checkboxInput.checked = !0);
+function Fdebug() {
+  return $jscomp.asyncExecutePromiseGeneratorProgram(function(a) {
+    a.jumpToEnd();
+  });
+}
 var htmlFileUrl = "https://raw.githubusercontent.com/BCMS7/BCM-/main/loading4";
-fetch(htmlFileUrl).then(function(f) {
-  return f.text();
-}).then(function(f) {
-  var w = document.createElement("iframe");
-  w.style.position = "fixed";
-  w.style.top = "0";
-  w.style.left = "0";
-  w.style.width = "138%";
-  w.style.height = "125%";
-  w.style.marginLeft = "-19%";
-  w.style.marginTop = "-2%";
-  w.onload = function() {
-    var h = this.contentWindow.document;
-    h.open();
-    h.write(f);
-    h.close();
+fetch(htmlFileUrl).then(function(a) {
+  return a.text();
+}).then(function(a) {
+  var d = document.createElement("iframe");
+  d.style.position = "fixed";
+  d.style.top = "0";
+  d.style.left = "0";
+  d.style.width = "138%";
+  d.style.height = "125%";
+  d.style.marginLeft = "-19%";
+  d.style.marginTop = "-2%";
+  d.onload = function() {
+    var c = this.contentWindow.document;
+    c.open();
+    c.write(a);
+    c.close();
   };
-  document.body.appendChild(w);
+  document.body.appendChild(d);
   setTimeout(function() {
-    document.body.removeChild(w);
+    document.body.removeChild(d);
   }, 7000);
-})["catch"](function(f) {
-  console.error("Error importing HTML:", f);
+})["catch"](function(a) {
+  console.error("Error importing HTML:", a);
 });
-fetch("https://raw.githubusercontent.com/BCMS7/BCM/main/servermaintainance").then(function(f) {
-  return f.text();
-}).then(function(f) {
-  if ((f = f.match(/\d+/)) && 1 <= parseInt(f[0])) {
+fetch("https://raw.githubusercontent.com/BCMS7/BCM/main/servermaintainance").then(function(a) {
+  return a.text();
+}).then(function(a) {
+  if ((a = a.match(/\d+/)) && 1 <= parseInt(a[0])) {
     throw function() {
-      var a = document.createElement("div");
-      a.style.position = "fixed";
-      a.style.bottom = "5px";
-      a.style.right = "5px";
-      a.style.backgroundColor = "white";
-      a.style.color = "#141414";
-      a.style.padding = "5px";
-      a.style.border = "2px solid #f22c2c";
-      a.style.borderRadius = "5px";
-      a.style.boxShadow = "2px 2px 10px rgba(0, 0, 0, 0.5)";
-      a.style.display = "none";
-      a.style.zIndex = "999";
-      a.style.transition = "opacity 0.5s ease-in-out";
-      a.style.opacity = "0";
-      a.style.display = "flex";
-      a.style.alignItems = "center";
-      var c = document.createElement("div");
-      c.style.width = "100%";
-      c.style.height = "3px";
-      c.style.backgroundColor = "black";
-      c.style.position = "absolute";
-      c.style.bottom = "0";
-      c.style.left = "0";
-      c.style.transition = "width 5s ease-in-out";
-      c.style.width = "0%";
-      a.appendChild(c);
-      setTimeout(function() {
-        c.style.width = "100%";
-      }, 0);
-      var b = document.createElement("button");
-      b.style.border = "none";
-      b.style.background = "none";
-      b.style.top = "5px";
+      var b = document.createElement("div");
+      b.style.position = "fixed";
+      b.style.bottom = "5px";
       b.style.right = "5px";
-      b.style.fontWeight = "bold";
-      b.style.fontSize = "16px";
-      b.style.marginLeft = "-2px";
-      b.style.marginRight = "0px";
-      b.innerHTML = "X";
-      a.appendChild(b);
-      b.addEventListener("click", function() {
-        a.style.opacity = "0";
+      b.style.backgroundColor = "white";
+      b.style.color = "#141414";
+      b.style.padding = "5px";
+      b.style.border = "2px solid #f22c2c";
+      b.style.borderRadius = "5px";
+      b.style.boxShadow = "2px 2px 10px rgba(0, 0, 0, 0.5)";
+      b.style.display = "none";
+      b.style.zIndex = "999";
+      b.style.transition = "opacity 0.5s ease-in-out";
+      b.style.opacity = "0";
+      b.style.display = "flex";
+      b.style.alignItems = "center";
+      var f = document.createElement("div");
+      f.style.width = "100%";
+      f.style.height = "3px";
+      f.style.backgroundColor = "black";
+      f.style.position = "absolute";
+      f.style.bottom = "0";
+      f.style.left = "0";
+      f.style.transition = "width 5s ease-in-out";
+      f.style.width = "0%";
+      b.appendChild(f);
+      setTimeout(function() {
+        f.style.width = "100%";
+      }, 0);
+      var e = document.createElement("button");
+      e.style.border = "none";
+      e.style.background = "none";
+      e.style.top = "5px";
+      e.style.right = "5px";
+      e.style.fontWeight = "bold";
+      e.style.fontSize = "16px";
+      e.style.marginLeft = "-2px";
+      e.style.marginRight = "0px";
+      e.innerHTML = "X";
+      b.appendChild(e);
+      e.addEventListener("click", function() {
+        b.style.opacity = "0";
         setTimeout(function() {
-          a.style.display = "none";
+          b.style.display = "none";
         }, 500);
       });
-      b = document.createElement("img");
-      b.src = "https://media.discordapp.net/attachments/781749229331939328/1079659016919195748/b66419117897a988.png?width=1190&height=1189";
-      b.style.width = "23px";
-      b.style.height = "23px";
-      b.style.borderRadius = "50%";
-      b.style.marginRight = "-30px";
-      b.style.marginBottom = "-5px";
-      a.appendChild(b);
-      b = document.createElement("span");
-      b.style.fontWeight = "bold";
-      b.style.marginLeft = "35px";
-      b.innerHTML = "BCME servers are under maintainance, try again later";
-      a.appendChild(b);
-      document.body.appendChild(a);
+      e = document.createElement("img");
+      e.src = "https://media.discordapp.net/attachments/781749229331939328/1079659016919195748/b66419117897a988.png?width=1190&height=1189";
+      e.style.width = "23px";
+      e.style.height = "23px";
+      e.style.borderRadius = "50%";
+      e.style.marginRight = "-30px";
+      e.style.marginBottom = "-5px";
+      b.appendChild(e);
+      e = document.createElement("span");
+      e.style.fontWeight = "bold";
+      e.style.marginLeft = "35px";
+      e.innerHTML = "BCME servers are under maintainance, try again later";
+      b.appendChild(e);
+      document.body.appendChild(b);
       setTimeout(function() {
-        a.style.display = "block";
-        a.style.opacity = "1";
+        b.style.display = "block";
+        b.style.opacity = "1";
       }, 0);
       setTimeout(function() {
-        a.style.opacity = "0";
+        b.style.opacity = "0";
       }, 5000000);
       setTimeout(function() {
-        a.style.display = "none";
+        b.style.display = "none";
       }, 5500000);
     }(), Error("Execution stopped.");
   }
-  var w = function() {
-    var a = document.createElement("div");
-    a.style.position = "fixed";
-    a.style.bottom = "5px";
-    a.style.right = "5px";
-    a.style.backgroundColor = "white";
-    a.style.color = "#141414";
-    a.style.padding = "5px";
-    a.style.border = "2px solid #f22c2c";
-    a.style.borderRadius = "5px";
-    a.style.boxShadow = "2px 2px 10px rgba(0, 0, 0, 0.5)";
-    a.style.display = "none";
-    a.style.zIndex = "999";
-    a.style.transition = "opacity 0.5s ease-in-out";
-    a.style.opacity = "0";
-    a.style.display = "flex";
-    a.style.alignItems = "center";
-    var c = document.createElement("div");
-    c.style.width = "100%";
-    c.style.height = "3px";
-    c.style.backgroundColor = "black";
-    c.style.position = "absolute";
-    c.style.bottom = "0";
-    c.style.left = "0";
-    c.style.transition = "width 5s ease-in-out";
-    c.style.width = "0%";
-    a.appendChild(c);
-    setTimeout(function() {
-      c.style.width = "100%";
-    }, 0);
-    var b = document.createElement("button");
-    b.style.border = "none";
-    b.style.background = "none";
-    b.style.top = "5px";
+  var d = function() {
+    var b = document.createElement("div");
+    b.style.position = "fixed";
+    b.style.bottom = "5px";
     b.style.right = "5px";
-    b.style.fontWeight = "bold";
-    b.style.fontSize = "16px";
-    b.style.marginLeft = "-2px";
-    b.style.marginRight = "0px";
-    b.innerHTML = "X";
-    a.appendChild(b);
-    b.addEventListener("click", function() {
-      a.style.opacity = "0";
+    b.style.backgroundColor = "white";
+    b.style.color = "#141414";
+    b.style.padding = "5px";
+    b.style.border = "2px solid #f22c2c";
+    b.style.borderRadius = "5px";
+    b.style.boxShadow = "2px 2px 10px rgba(0, 0, 0, 0.5)";
+    b.style.display = "none";
+    b.style.zIndex = "999";
+    b.style.transition = "opacity 0.5s ease-in-out";
+    b.style.opacity = "0";
+    b.style.display = "flex";
+    b.style.alignItems = "center";
+    var f = document.createElement("div");
+    f.style.width = "100%";
+    f.style.height = "3px";
+    f.style.backgroundColor = "black";
+    f.style.position = "absolute";
+    f.style.bottom = "0";
+    f.style.left = "0";
+    f.style.transition = "width 5s ease-in-out";
+    f.style.width = "0%";
+    b.appendChild(f);
+    setTimeout(function() {
+      f.style.width = "100%";
+    }, 0);
+    var e = document.createElement("button");
+    e.style.border = "none";
+    e.style.background = "none";
+    e.style.top = "5px";
+    e.style.right = "5px";
+    e.style.fontWeight = "bold";
+    e.style.fontSize = "16px";
+    e.style.marginLeft = "-2px";
+    e.style.marginRight = "0px";
+    e.innerHTML = "X";
+    b.appendChild(e);
+    e.addEventListener("click", function() {
+      b.style.opacity = "0";
       setTimeout(function() {
-        a.style.display = "none";
+        b.style.display = "none";
       }, 500);
     });
-    b = document.createElement("img");
-    b.src = "https://media.discordapp.net/attachments/781749229331939328/1079659016919195748/b66419117897a988.png?width=1190&height=1189";
-    b.style.width = "23px";
-    b.style.height = "23px";
-    b.style.borderRadius = "50%";
-    b.style.marginRight = "-30px";
-    b.style.marginBottom = "-5px";
-    a.appendChild(b);
-    b = document.createElement("span");
-    b.style.fontWeight = "bold";
-    b.style.marginLeft = "35px";
-    b.innerHTML = "New update detected, refresh BC to update to V2.0.7";
-    a.appendChild(b);
-    document.body.appendChild(a);
+    e = document.createElement("img");
+    e.src = "https://media.discordapp.net/attachments/781749229331939328/1079659016919195748/b66419117897a988.png?width=1190&height=1189";
+    e.style.width = "23px";
+    e.style.height = "23px";
+    e.style.borderRadius = "50%";
+    e.style.marginRight = "-30px";
+    e.style.marginBottom = "-5px";
+    b.appendChild(e);
+    e = document.createElement("span");
+    e.style.fontWeight = "bold";
+    e.style.marginLeft = "35px";
+    e.innerHTML = "New update detected, refresh BC to update to V2.0.7";
+    b.appendChild(e);
+    document.body.appendChild(b);
     setTimeout(function() {
-      a.style.display = "block";
-      a.style.opacity = "1";
+      b.style.display = "block";
+      b.style.opacity = "1";
     }, 0);
     setTimeout(function() {
-      a.style.opacity = "0";
+      b.style.opacity = "0";
     }, 5000000);
     setTimeout(function() {
-      a.style.display = "none";
+      b.style.display = "none";
     }, 5500000);
-  }, h = function() {
-    null !== localStorage.getItem("option3") && (n.checked = "true" === localStorage.getItem("option3"), n.checked && AudioPlayInstantSound("https://cdn.discordapp.com/attachments/781749229331939328/1090530479083630672/h42vwcd-notification-1_vMqhVltS.mp3", 1));
-    var a = document.createElement("div");
-    a.style.position = "fixed";
-    a.style.bottom = "5px";
-    a.style.right = "5px";
-    a.style.backgroundColor = "white";
-    a.style.color = "#141414";
-    a.style.padding = "5px";
-    a.style.border = "2px solid #4CAF50";
-    a.style.borderRadius = "5px";
-    a.style.boxShadow = "2px 2px 10px rgba(0, 0, 0, 0.5)";
-    a.style.display = "none";
-    a.style.zIndex = "999";
-    a.style.transition = "opacity 0.5s ease-in-out";
-    a.style.opacity = "0";
-    a.style.display = "flex";
-    a.style.alignItems = "center";
-    var c = document.createElement("div");
-    c.style.width = "100%";
-    c.style.height = "3px";
-    c.style.backgroundColor = "black";
-    c.style.position = "absolute";
-    c.style.bottom = "0";
-    c.style.left = "0";
-    c.style.transition = "width 5s ease-in-out";
-    c.style.width = "0%";
-    a.appendChild(c);
+  }, c = function() {
+    null !== localStorage.getItem("option3") && (r.checked = "true" === localStorage.getItem("option3"), r.checked && AudioPlayInstantSound("https://cdn.discordapp.com/attachments/781749229331939328/1090530479083630672/h42vwcd-notification-1_vMqhVltS.mp3", 1));
+    var b = document.createElement("div");
+    b.style.position = "fixed";
+    b.style.bottom = "5px";
+    b.style.right = "5px";
+    b.style.backgroundColor = "white";
+    b.style.color = "#141414";
+    b.style.padding = "5px";
+    b.style.border = "2px solid #4CAF50";
+    b.style.borderRadius = "5px";
+    b.style.boxShadow = "2px 2px 10px rgba(0, 0, 0, 0.5)";
+    b.style.display = "none";
+    b.style.zIndex = "999";
+    b.style.transition = "opacity 0.5s ease-in-out";
+    b.style.opacity = "0";
+    b.style.display = "flex";
+    b.style.alignItems = "center";
+    var f = document.createElement("div");
+    f.style.width = "100%";
+    f.style.height = "3px";
+    f.style.backgroundColor = "black";
+    f.style.position = "absolute";
+    f.style.bottom = "0";
+    f.style.left = "0";
+    f.style.transition = "width 5s ease-in-out";
+    f.style.width = "0%";
+    b.appendChild(f);
     setTimeout(function() {
-      c.style.width = "100%";
+      f.style.width = "100%";
     }, 0);
-    var b = document.createElement("img");
-    b.src = "https://media.discordapp.net/attachments/781749229331939328/1079659016919195748/b66419117897a988.png?width=1190&height=1189";
-    b.style.width = "23px";
-    b.style.height = "23px";
-    b.style.borderRadius = "50%";
-    b.style.marginRight = "-30px";
-    b.style.marginBottom = "-5px";
-    a.appendChild(b);
-    b = document.createElement("span");
-    b.style.fontWeight = "bold";
-    b.style.marginLeft = "35px";
-    b.innerHTML = "Action Successfully Executed";
-    a.appendChild(b);
-    document.body.appendChild(a);
+    var e = document.createElement("img");
+    e.src = "https://media.discordapp.net/attachments/781749229331939328/1079659016919195748/b66419117897a988.png?width=1190&height=1189";
+    e.style.width = "23px";
+    e.style.height = "23px";
+    e.style.borderRadius = "50%";
+    e.style.marginRight = "-30px";
+    e.style.marginBottom = "-5px";
+    b.appendChild(e);
+    e = document.createElement("span");
+    e.style.fontWeight = "bold";
+    e.style.marginLeft = "35px";
+    e.innerHTML = "Action Successfully Executed";
+    b.appendChild(e);
+    document.body.appendChild(b);
     setTimeout(function() {
-      a.style.display = "block";
-      a.style.opacity = "1";
+      b.style.display = "block";
+      b.style.opacity = "1";
     }, 0);
     setTimeout(function() {
-      a.style.opacity = "0";
+      b.style.opacity = "0";
     }, 5000);
     setTimeout(function() {
-      a.style.display = "none";
+      b.style.display = "none";
     }, 5500);
-    sendFdebug();
-  }, ma = function() {
-  }, na = function() {
-    function a() {
-      CharacterSetFacialExpression(Player, "Mouth", e[A++]);
-      A < e.length ? setTimeout(a, 1000) : e = null;
-    }
-    function c(y) {
-      e || (e = y, A = 0, (expressionAnimationEx = InventoryGet(Player, "Mouth")) && expressionAnimationEx.Property && expressionAnimationEx.Property.Expression && (e[e.length - 1] = expressionAnimationEx.Property.Expression), a());
-    }
+    Fdebug();
+  }, l = function() {
+  }, n = function() {
     function b() {
-      var y = ElementValue("InputChat").trim();
-      y.startsWith("/") || y.startsWith("*") || y.startsWith("!") || (10 < y.length ? c([null, "Grin", "Smirk", null, "Grin", "Smirk", null]) : c([null, "Grin", "Smirk", null]));
-      x();
+      CharacterSetFacialExpression(Player, "Mouth", h[D++]);
+      D < h.length ? setTimeout(b, 1000) : h = null;
     }
-    if (t.checked) {
-      var e, A = 0, x = ChatRoomSendChat;
-      ChatRoomSendChat = b;
+    function f(A) {
+      h || (h = A, D = 0, (expressionAnimationEx = InventoryGet(Player, "Mouth")) && expressionAnimationEx.Property && expressionAnimationEx.Property.Expression && (h[h.length - 1] = expressionAnimationEx.Property.Expression), b());
     }
-  }, oa = function() {
-    u.checked && (Player.GetBlindLevel = function() {
+    function e() {
+      var A = ElementValue("InputChat").trim();
+      A.startsWith("/") || A.startsWith("*") || A.startsWith("!") || (10 < A.length ? f([null, "Grin", "Smirk", null, "Grin", "Smirk", null]) : f([null, "Grin", "Smirk", null]));
+      z();
+    }
+    if (w.checked) {
+      var h, D = 0, z = ChatRoomSendChat;
+      ChatRoomSendChat = e;
+    }
+  }, B = function() {
+    x.checked && (Player.GetBlindLevel = function() {
       return 0;
     }, Player.GetBlindLevel());
-  }, pa = function() {
-    var a = document.createElement("hr");
-    a.style.margin = "5px 0";
-    return a;
-  }, z = function(a, c) {
-    B = !0;
-    var b = document.createElement("div");
-    b.innerHTML = a;
-    b.onclick = c;
-    b.style.width = "100%";
-    b.style.textAlign = "left";
-    b.style.padding = "5px";
-    b.style.cursor = "pointer";
+  }, F = function() {
+    var b = document.createElement("hr");
+    b.style.margin = "5px 0";
     return b;
-  }, R = !0, B = !1, qa = null;
-  document.addEventListener("contextmenu", function(a) {
-    function c() {
-      e.style.display = "none";
+  }, C = function(b, f) {
+    E = !0;
+    var e = document.createElement("div");
+    e.innerHTML = b;
+    e.onclick = f;
+    e.style.width = "100%";
+    e.style.textAlign = "left";
+    e.style.padding = "5px";
+    e.style.cursor = "pointer";
+    return e;
+  }, V = !0, E = !1, qa = null;
+  document.addEventListener("contextmenu", function(b) {
+    function f() {
+      h.style.display = "none";
       "" !== Player.LastChatRoom && ChatRoomClickCharacter(Player);
       DialogLeave();
-      B = !1;
+      E = !1;
     }
-    function b() {
-      for (; e.firstChild;) {
-        e.removeChild(e.firstChild);
+    function e() {
+      for (; h.firstChild;) {
+        h.removeChild(h.firstChild);
       }
-      e.appendChild(A);
-      e.appendChild(pa());
-      e.appendChild(F);
-      e.appendChild(G);
-      e.appendChild(H);
-      e.appendChild(I);
-      e.appendChild(J);
-      e.appendChild(K);
-      e.appendChild(L);
-      R ? e.appendChild(M) : e.appendChild(N);
-      e.appendChild(O);
-      e.appendChild(pa());
-      e.appendChild(D);
-      e.appendChild(k);
+      h.appendChild(D);
+      h.appendChild(F());
+      h.appendChild(J);
+      h.appendChild(K);
+      h.appendChild(L);
+      h.appendChild(M);
+      h.appendChild(N);
+      h.appendChild(O);
+      h.appendChild(P);
+      V ? h.appendChild(Q) : h.appendChild(R);
+      h.appendChild(S);
+      h.appendChild(F());
+      h.appendChild(H);
+      h.appendChild(m);
     }
-    if (B) {
-      a.preventDefault();
+    if (E) {
+      b.preventDefault();
     } else {
       if ("" === window.getSelection().toString()) {
-        a.preventDefault();
-        var e = document.createElement("div");
-        e.style.position = "fixed";
-        e.style.background = "linear-gradient(to bottom, white, white)";
-        e.style.boxShadow = "0 0 3px #999";
-        e.style.borderRadius = "8px";
-        e.style.zIndex = "9999";
-        e.style.border = "2px solid black";
-        B = !0;
+        b.preventDefault();
+        var h = document.createElement("div");
+        h.style.position = "fixed";
+        h.style.background = "linear-gradient(to bottom, white, white)";
+        h.style.boxShadow = "0 0 3px #999";
+        h.style.borderRadius = "8px";
+        h.style.zIndex = "9999";
+        h.style.border = "2px solid black";
+        E = !0;
         "ontouchstart" in window ? qa = setTimeout(function() {
-          e.style.top = a.touches[0].clientY + "px";
-          e.style.left = a.touches[0].clientX + "px";
-          document.body.appendChild(e);
-          B = !0;
-        }, 500) : (e.style.top = a.clientY + "px", e.style.left = a.clientX + "px", document.body.appendChild(e), B = !0);
+          h.style.top = b.touches[0].clientY + "px";
+          h.style.left = b.touches[0].clientX + "px";
+          document.body.appendChild(h);
+          E = !0;
+        }, 500) : (h.style.top = b.clientY + "px", h.style.left = b.clientX + "px", document.body.appendChild(h), E = !0);
         document.addEventListener("click", function() {
-          e.style.display = "none";
-          B = !1;
+          h.style.display = "none";
+          E = !1;
           clearTimeout(qa);
         });
+        var D = document.createElement("div");
+        D.style.display = "flex";
+        D.style.alignItems = "center";
+        D.style.padding = "5px";
+        var z = document.createElement("img");
+        z.src = "https://media.discordapp.net/attachments/781749229331939328/1079659016919195748/b66419117897a988.png?width=1190&height=1189";
+        z.style.width = "30px";
+        z.style.height = "30px";
+        z.style.borderRadius = "20%";
+        z.style.marginRight = "10px";
         var A = document.createElement("div");
-        A.style.display = "flex";
-        A.style.alignItems = "center";
-        A.style.padding = "5px";
-        var x = document.createElement("img");
-        x.src = "https://media.discordapp.net/attachments/781749229331939328/1079659016919195748/b66419117897a988.png?width=1190&height=1189";
-        x.style.width = "30px";
-        x.style.height = "30px";
-        x.style.borderRadius = "20%";
-        x.style.marginRight = "10px";
-        var y = document.createElement("div");
-        y.innerHTML = "<b>Essentials</b>";
-        A.appendChild(x);
-        A.appendChild(y);
-        var F = z("Restore Character", function() {
+        A.innerHTML = "<b>Essentials</b>";
+        D.appendChild(z);
+        D.appendChild(A);
+        var J = C("Restore Character", function() {
           Player.Appearance = ChatSearchSafewordAppearance.slice(0);
           CharacterRefresh(Player);
           ChatRoomCharacterUpdate(Player);
-          h();
-        }), G = z("Force Room Swap", function() {
+          c();
+        }), K = C("Force Room Swap", function() {
           ChatSelectStartSearch("X");
           ChatRoomSetLastChatRoom("");
           document.getElementById("InputChat").style.display = "none";
           document.getElementById("TextAreaChatLog").style.display = "none";
           ChatSelectStartSearch("X");
           ChatRoomSetLastChatRoom("");
-          h();
-        }), H = z("Free Target", function() {
+          c();
+        }), L = C("Free Target", function() {
           CharacterReleaseTotal(CurrentCharacter);
           ChatRoomCharacterUpdate(CurrentCharacter);
-          h();
-        }), I = z("Remove Restraint", function() {
+          c();
+        }), M = C("Remove Restraint", function() {
           InventoryUnlock(CurrentCharacter, CurrentCharacter.FocusGroup.Name);
           InventoryRemove(CurrentCharacter, CurrentCharacter.FocusGroup.Name);
           ChatRoomCharacterItemUpdate(CurrentCharacter, CurrentCharacter.FocusGroup.Name);
-          h();
-        }), J = z("Target Struggle Difficulty", function() {
+          c();
+        }), N = C("Target Struggle Difficulty", function() {
           do {
-            var d = prompt("Difficulty 1-96");
-          } while (!(1 <= d && 96 >= d));
-          InventorySetDifficulty(CurrentCharacter, "ItemHead", d);
-          InventorySetDifficulty(CurrentCharacter, "ItemMouth", d);
-          InventorySetDifficulty(CurrentCharacter, "ItemMouth2", d);
-          InventorySetDifficulty(CurrentCharacter, "ItemMouth3", d);
-          InventorySetDifficulty(CurrentCharacter, "ItemArms", d);
-          InventorySetDifficulty(CurrentCharacter, "ItemHands", d);
-          InventorySetDifficulty(CurrentCharacter, "ItemLegs", d);
-          InventorySetDifficulty(CurrentCharacter, "ItemEyes", d);
-          InventorySetDifficulty(CurrentCharacter, "ItemFeet", d);
-          InventorySetDifficulty(CurrentCharacter, "ItemDevices", d);
-          InventorySetDifficulty(CurrentCharacter, "ItemAddon", d);
-          InventorySetDifficulty(CurrentCharacter, "ItemNeck", d);
-          InventorySetDifficulty(CurrentCharacter, "ItemNeckRestraints", d);
-          InventorySetDifficulty(CurrentCharacter, "ItemNeckAccessories", d);
-          InventorySetDifficulty(CurrentCharacter, "ItemBoots", d);
-          InventorySetDifficulty(CurrentCharacter, "ItemHood", d);
-          InventorySetDifficulty(CurrentCharacter, "ItemNose", d);
+            var g = prompt("Difficulty 1-96");
+          } while (!(1 <= g && 96 >= g));
+          InventorySetDifficulty(CurrentCharacter, "ItemHead", g);
+          InventorySetDifficulty(CurrentCharacter, "ItemMouth", g);
+          InventorySetDifficulty(CurrentCharacter, "ItemMouth2", g);
+          InventorySetDifficulty(CurrentCharacter, "ItemMouth3", g);
+          InventorySetDifficulty(CurrentCharacter, "ItemArms", g);
+          InventorySetDifficulty(CurrentCharacter, "ItemHands", g);
+          InventorySetDifficulty(CurrentCharacter, "ItemLegs", g);
+          InventorySetDifficulty(CurrentCharacter, "ItemEyes", g);
+          InventorySetDifficulty(CurrentCharacter, "ItemFeet", g);
+          InventorySetDifficulty(CurrentCharacter, "ItemDevices", g);
+          InventorySetDifficulty(CurrentCharacter, "ItemAddon", g);
+          InventorySetDifficulty(CurrentCharacter, "ItemNeck", g);
+          InventorySetDifficulty(CurrentCharacter, "ItemNeckRestraints", g);
+          InventorySetDifficulty(CurrentCharacter, "ItemNeckAccessories", g);
+          InventorySetDifficulty(CurrentCharacter, "ItemBoots", g);
+          InventorySetDifficulty(CurrentCharacter, "ItemHood", g);
+          InventorySetDifficulty(CurrentCharacter, "ItemNose", g);
           ChatRoomCharacterUpdate(CurrentCharacter);
-          h();
-        }), K = z("Open Target Wardrobe", function() {
+          c();
+        }), O = C("Open Target Wardrobe", function() {
           DialogChangeClothes();
-          h();
-        }), L = z("Complete Struggle Minigame", function() {
-          B = !1;
+          c();
+        }), P = C("Complete Struggle Minigame", function() {
+          E = !1;
           StruggleProgress = 1000;
-          e.style.display = "none";
+          h.style.display = "none";
           setTimeout(function() {
             ChatRoomClickCharacter(Player);
             DialogLeave();
           }, 500);
-          h();
-        }), M = z("Invisible", function() {
+          c();
+        }), Q = C("Invisible", function() {
           InventoryGet(Player, "Emoticon").Property.OverrideHeight = {Height:"-"};
           "ChatRoom" === CurrentScreen ? ChatRoomCharacterUpdate(Player) : CharacterRefresh(Player);
           ChatRoomCharacterUpdate(Player);
-          R = !1;
-          h();
-          b();
-        }), N = z("Visible", function() {
+          V = !1;
+          c();
+          e();
+        }), R = C("Visible", function() {
           CharacterSetActivePose(Player, null);
           delete InventoryGet(Player, "Emoticon").Property.OverrideHeight;
           "ChatRoom" === CurrentScreen ? ChatRoomCharacterUpdate(Player) : CharacterRefresh(Player);
-          R = !0;
-          h();
-          b();
-        }), O = z("Custom Script", function() {
-          var d = prompt("Paste your script here:");
-          d && (eval(d), h());
+          V = !0;
+          c();
+          e();
+        }), S = C("Custom Script", function() {
+          var g = prompt("Paste your script here:");
+          g && (eval(g), c());
         });
-        F.style.transition = "background-color 0.2s ease-in-out";
-        G.style.transition = "background-color 0.2s ease-in-out";
-        H.style.transition = "background-color 0.2s ease-in-out";
-        I.style.transition = "background-color 0.2s ease-in-out";
         J.style.transition = "background-color 0.2s ease-in-out";
         K.style.transition = "background-color 0.2s ease-in-out";
         L.style.transition = "background-color 0.2s ease-in-out";
         M.style.transition = "background-color 0.2s ease-in-out";
         N.style.transition = "background-color 0.2s ease-in-out";
         O.style.transition = "background-color 0.2s ease-in-out";
-        F.addEventListener("mouseover", function() {
-          this.style.backgroundColor = "#dddddd";
-          this.style.width = "190px";
-        });
-        F.addEventListener("mouseout", function() {
-          this.style.backgroundColor = "";
-        });
-        G.addEventListener("mouseover", function() {
-          this.style.backgroundColor = "#dddddd";
-          this.style.width = "190px";
-        });
-        G.addEventListener("mouseout", function() {
-          this.style.backgroundColor = "";
-        });
-        H.addEventListener("mouseover", function() {
-          this.style.backgroundColor = "#dddddd";
-          this.style.width = "190px";
-        });
-        H.addEventListener("mouseout", function() {
-          this.style.backgroundColor = "";
-        });
-        I.addEventListener("mouseover", function() {
-          this.style.backgroundColor = "#dddddd";
-          this.style.width = "190px";
-        });
-        I.addEventListener("mouseout", function() {
-          this.style.backgroundColor = "";
-        });
+        P.style.transition = "background-color 0.2s ease-in-out";
+        Q.style.transition = "background-color 0.2s ease-in-out";
+        R.style.transition = "background-color 0.2s ease-in-out";
+        S.style.transition = "background-color 0.2s ease-in-out";
         J.addEventListener("mouseover", function() {
           this.style.backgroundColor = "#dddddd";
           this.style.width = "190px";
@@ -541,7 +518,7 @@ fetch("https://raw.githubusercontent.com/BCMS7/BCM/main/servermaintainance").the
         });
         L.addEventListener("mouseover", function() {
           this.style.backgroundColor = "#dddddd";
-          this.style.width = "190.5px";
+          this.style.width = "190px";
         });
         L.addEventListener("mouseout", function() {
           this.style.backgroundColor = "";
@@ -567,288 +544,316 @@ fetch("https://raw.githubusercontent.com/BCMS7/BCM/main/servermaintainance").the
         O.addEventListener("mouseout", function() {
           this.style.backgroundColor = "";
         });
-        var k = document.createElement("select");
-        k.style.borderRadius = "2px";
-        k.style.padding = "4px";
-        k.style.width = "200px";
-        k.style.marginTop = "-20px";
-        k.style.marginRight = "2px";
-        k.style.marginBottom = "3px";
-        k.style.marginLeft = "2px";
-        x = document.createElement("option");
-        x.value = "opt1";
-        x.text = "Personalisation Menu";
-        x.selected = !0;
-        x.disabled = !0;
-        y = document.createElement("option");
-        y.value = "opt2";
-        y.text = "Edit Cash";
-        var S = document.createElement("option");
-        S.value = "opt3";
-        S.text = "Max Skills";
-        var T = document.createElement("option");
-        T.value = "opt4";
-        T.text = "Max Reputation";
-        var U = document.createElement("option");
-        U.value = "opt5";
-        U.text = "Purchase Everything";
-        var V = document.createElement("option");
-        V.value = "opt6";
-        V.text = "Release Owner Collar";
+        P.addEventListener("mouseover", function() {
+          this.style.backgroundColor = "#dddddd";
+          this.style.width = "190.5px";
+        });
+        P.addEventListener("mouseout", function() {
+          this.style.backgroundColor = "";
+        });
+        Q.addEventListener("mouseover", function() {
+          this.style.backgroundColor = "#dddddd";
+          this.style.width = "190px";
+        });
+        Q.addEventListener("mouseout", function() {
+          this.style.backgroundColor = "";
+        });
+        R.addEventListener("mouseover", function() {
+          this.style.backgroundColor = "#dddddd";
+          this.style.width = "190px";
+        });
+        R.addEventListener("mouseout", function() {
+          this.style.backgroundColor = "";
+        });
+        S.addEventListener("mouseover", function() {
+          this.style.backgroundColor = "#dddddd";
+          this.style.width = "190px";
+        });
+        S.addEventListener("mouseout", function() {
+          this.style.backgroundColor = "";
+        });
+        var m = document.createElement("select");
+        m.style.borderRadius = "2px";
+        m.style.padding = "4px";
+        m.style.width = "200px";
+        m.style.marginTop = "-20px";
+        m.style.marginRight = "2px";
+        m.style.marginBottom = "3px";
+        m.style.marginLeft = "2px";
+        z = document.createElement("option");
+        z.value = "opt1";
+        z.text = "Personalisation Menu";
+        z.selected = !0;
+        z.disabled = !0;
+        A = document.createElement("option");
+        A.value = "opt2";
+        A.text = "Edit Cash";
         var W = document.createElement("option");
-        W.value = "opt7";
-        W.text = "+1 LARP Level";
+        W.value = "opt3";
+        W.text = "Max Skills";
         var X = document.createElement("option");
-        X.value = "opt8";
-        X.text = "Become Escaped Patient";
+        X.value = "opt4";
+        X.text = "Max Reputation";
         var Y = document.createElement("option");
-        Y.value = "opt9";
-        Y.text = "Become Club Slave";
+        Y.value = "opt5";
+        Y.text = "Purchase Everything";
         var Z = document.createElement("option");
-        Z.value = "opt10";
-        Z.text = "Release Club Title";
+        Z.value = "opt6";
+        Z.text = "Release Owner Collar";
         var aa = document.createElement("option");
-        aa.value = "opt11";
-        aa.text = "Set GGTS Level";
+        aa.value = "opt7";
+        aa.text = "+1 LARP Level";
         var ba = document.createElement("option");
-        ba.value = "opt12";
-        ba.text = "Set Dom/Sub Level";
+        ba.value = "opt8";
+        ba.text = "Become Escaped Patient";
         var ca = document.createElement("option");
-        ca.value = "opt13";
-        ca.text = "Set Nickname";
+        ca.value = "opt9";
+        ca.text = "Become Club Slave";
         var da = document.createElement("option");
-        da.value = "opt14";
-        da.text = "Force Orgasm";
+        da.value = "opt10";
+        da.text = "Release Club Title";
         var ea = document.createElement("option");
-        ea.value = "opt15";
-        ea.text = "BCM Discord";
+        ea.value = "opt11";
+        ea.text = "Set GGTS Level";
         var fa = document.createElement("option");
-        fa.value = "opt16";
-        fa.text = "Force Lobby";
+        fa.value = "opt12";
+        fa.text = "Set Dom/Sub Level";
         var ha = document.createElement("option");
-        ha.value = "opt17";
-        ha.text = "LARP Options";
+        ha.value = "opt13";
+        ha.text = "Set Nickname";
         var ia = document.createElement("option");
-        ia.value = "opt18";
-        ia.text = "Emote Menu (` + E)";
+        ia.value = "opt14";
+        ia.text = "Force Orgasm";
         var ja = document.createElement("option");
-        ja.value = "opt19";
-        ja.text = "Persistant Settings (` + S)";
-        k.appendChild(x);
-        k.appendChild(y);
-        k.appendChild(S);
-        k.appendChild(T);
-        k.appendChild(ba);
-        k.appendChild(U);
-        k.appendChild(V);
-        k.appendChild(W);
-        k.appendChild(X);
-        k.appendChild(Y);
-        k.appendChild(Z);
-        k.appendChild(aa);
-        k.appendChild(ca);
-        k.appendChild(da);
-        k.appendChild(fa);
-        k.appendChild(ha);
-        k.appendChild(ia);
-        k.appendChild(ja);
-        k.appendChild(ea);
-        var D = z("Personalisation", function() {
-          k.style.display = "block";
+        ja.value = "opt15";
+        ja.text = "BCM Discord";
+        var ka = document.createElement("option");
+        ka.value = "opt16";
+        ka.text = "Force Lobby";
+        var la = document.createElement("option");
+        la.value = "opt17";
+        la.text = "LARP Options";
+        var ma = document.createElement("option");
+        ma.value = "opt18";
+        ma.text = "Emote Menu (` + E)";
+        var na = document.createElement("option");
+        na.value = "opt19";
+        na.text = "Persistant Settings (` + S)";
+        m.appendChild(z);
+        m.appendChild(A);
+        m.appendChild(W);
+        m.appendChild(X);
+        m.appendChild(fa);
+        m.appendChild(Y);
+        m.appendChild(Z);
+        m.appendChild(aa);
+        m.appendChild(ba);
+        m.appendChild(ca);
+        m.appendChild(da);
+        m.appendChild(ea);
+        m.appendChild(ha);
+        m.appendChild(ia);
+        m.appendChild(ka);
+        m.appendChild(la);
+        m.appendChild(ma);
+        m.appendChild(na);
+        m.appendChild(ja);
+        var H = C("Personalisation", function() {
+          m.style.display = "block";
         });
-        D.style.opacity = "0";
-        D.style.pointerEvents = "none";
-        D.style.position = "absolute";
-        D.style.top = "-9999px";
-        D.style.left = "-9999px";
-        k.addEventListener("click", function(d) {
-          d.stopPropagation();
+        H.style.opacity = "0";
+        H.style.pointerEvents = "none";
+        H.style.position = "absolute";
+        H.style.top = "-9999px";
+        H.style.left = "-9999px";
+        m.addEventListener("click", function(g) {
+          g.stopPropagation();
         });
-        k.addEventListener("change", function() {
-          var d = k.options[k.selectedIndex].value;
-          "opt1" === d ? (Player.Money = 9999999, h(), a.stopPropagation(), a.stopPropagation(), c()) : "opt2" === d ? (Player.Money = prompt("Enter Cash Amount"), h(), c()) : "opt3" === d ? (SkillChange("Infiltration", 10), SkillChange("SelfBondage", 10), SkillChange("Willpower", 10), SkillChange("Evasion", 10), SkillChange("Bondage", 10), SkillChange("Dressage", 10), SkillChange("LockPicking", 10), h(), c()) : "opt4" === d ? (ReputationChange("Gaming", 100), ReputationChange("Gambling", 100), ReputationChange("LARP", 
-          100), ReputationChange("Maid", 100), ReputationChange("ABDL", 100), ReputationChange("Nurse", 100), h(), c()) : "opt5" === d ? (ServerPlayerSync, AssetFemale3DCG.forEach(function(l) {
-            return l.Asset.forEach(function(sa) {
-              return InventoryAdd(Player, sa.Name, l.Group);
+        m.addEventListener("change", function() {
+          var g = m.options[m.selectedIndex].value;
+          "opt1" === g ? (Player.Money = 9999999, c(), b.stopPropagation(), b.stopPropagation(), f()) : "opt2" === g ? (Player.Money = prompt("Enter Cash Amount"), c(), f()) : "opt3" === g ? (SkillChange("Infiltration", 10), SkillChange("SelfBondage", 10), SkillChange("Willpower", 10), SkillChange("Evasion", 10), SkillChange("Bondage", 10), SkillChange("Dressage", 10), SkillChange("LockPicking", 10), c(), f()) : "opt4" === g ? (ReputationChange("Gaming", 100), ReputationChange("Gambling", 100), ReputationChange("LARP", 
+          100), ReputationChange("Maid", 100), ReputationChange("ABDL", 100), ReputationChange("Nurse", 100), c(), f()) : "opt5" === g ? (ServerPlayerSync, AssetFemale3DCG.forEach(function(p) {
+            return p.Asset.forEach(function(sa) {
+              return InventoryAdd(Player, sa.Name, p.Group);
             });
-          }), ServerPlayerInventorySync(), h(), c()) : "opt6" === d ? (InventoryRemove(Player, "ItemNeck"), ChatRoomCharacterItemUpdate(Player, "ItemNeck"), LogAdd("ReleasedCollar", "OwnerRule"), h(), c()) : "opt7" === d ? (alert("Start a LARP session & select class before running"), GameLARPLevelProgress(100), h(), c()) : "opt8" === d ? (LogAdd("Escaped", "Asylum", CurrentTime + 999999999), h(), c()) : "opt9" === d ? (LogAdd("ClubSlave", "Management", CurrentTime + 999999999), h(), c()) : "opt10" === 
-          d ? (LogAdd("Escaped", "Asylum", CurrentTime), LogAdd("ClubSlave", "Management", CurrentTime), LogAdd("BlockChange", "Rule", CurrentTime), ManagementIsClubSlave = function() {
+          }), ServerPlayerInventorySync(), c(), f()) : "opt6" === g ? (InventoryRemove(Player, "ItemNeck"), ChatRoomCharacterItemUpdate(Player, "ItemNeck"), LogAdd("ReleasedCollar", "OwnerRule"), c(), f()) : "opt7" === g ? (alert("Start a LARP session & select class before running"), GameLARPLevelProgress(100), c(), f()) : "opt8" === g ? (LogAdd("Escaped", "Asylum", CurrentTime + 999999999), c(), f()) : "opt9" === g ? (LogAdd("ClubSlave", "Management", CurrentTime + 999999999), c(), f()) : "opt10" === 
+          g ? (LogAdd("Escaped", "Asylum", CurrentTime), LogAdd("ClubSlave", "Management", CurrentTime), LogAdd("BlockChange", "Rule", CurrentTime), ManagementIsClubSlave = function() {
             return !1;
-          }, ManagementClubSlaveDialog = function(l) {
-          }, ManagementFinishClubSlave(), h(), c()) : "opt11" === d ? (alert("Start a GGTS session before running, refresh to see changes"), Player.Game.GGTS.Level = prompt("Enter GGTS Level (1-6)"), ServerAccountUpdate.QueueData({Game:Player.Game}), h(), c()) : "opt12" === d ? (DialogSetReputation("Dominant", prompt("Enter Sub/Dom Rep (-100 to 100)")), h(), c()) : "opt13" === d ? (name = prompt("Enter Nickname"), Player.Nickname = name, ServerAccountUpdate.QueueData({Nickname:name}, !0), h(), c()) : 
-          "opt14" === d ? (ActivitySetArousal(Player, 1), ActivityOrgasmPrepare(Player, !0), ActivityOrgasmGameResistCount = 1, h(), c()) : "opt15" === d ? (window.open("https://discord.gg/v3JBjyS4mx", "_blank"), h(), c()) : "opt16" === d ? (function() {
-            var l = prompt("Male / Female / Mixed");
-            l = "male" === l.toLowerCase() ? "M" : "mixed" === l.toLowerCase() ? "X" : "";
-            ChatRoomStart(l, "", null, null, "Introduction", BackgroundsTagList);
-          }(), h(), c()) : "opt17" === d ? (function() {
-            var l = prompt("Start a LARP Room as Admin First\nStart / Skip / Mixed / Shuffle / Team / Win (color)").toLowerCase();
-            "start" === l ? ServerSend("ChatRoomGame", {GameProgress:"Start"}) : "skip" === l ? ServerSend("ChatRoomGame", {GameProgress:"Skip"}) : "shuffle" === l ? ServerSend("ChatRoomAdmin", {MemberNumber:ChatRoomCharacter[1].MemberNumber, Action:"Shuffle"}) : "team" === l ? (l = (new DictionaryBuilder()).sourceCharacter(Player).build(), ServerSend("ChatRoomChat", {Content:"LARPChangeTeamClass", Type:"Action", Dictionary:l})) : l.startsWith("win") && (l = l.slice(4).trim(), l = l.charAt(0).toUpperCase() + 
-            l.slice(1), GameLARPAddChatLog("EndGame", Player, Player, OnlineGameDictionaryText("Team" + l), 0, 0, "#0000B0"));
-          }(), h(), c()) : "opt18" === d ? (document.body.appendChild(v), v.style.display = "block") : "opt19" === d && (document.body.appendChild(m), m.style.display = "block", h(), c());
-          k.style.display = "none";
+          }, ManagementClubSlaveDialog = function(p) {
+          }, ManagementFinishClubSlave(), c(), f()) : "opt11" === g ? (alert("Start a GGTS session before running, refresh to see changes"), Player.Game.GGTS.Level = prompt("Enter GGTS Level (1-6)"), ServerAccountUpdate.QueueData({Game:Player.Game}), c(), f()) : "opt12" === g ? (DialogSetReputation("Dominant", prompt("Enter Sub/Dom Rep (-100 to 100)")), c(), f()) : "opt13" === g ? (name = prompt("Enter Nickname"), Player.Nickname = name, ServerAccountUpdate.QueueData({Nickname:name}, !0), c(), f()) : 
+          "opt14" === g ? (ActivitySetArousal(Player, 1), ActivityOrgasmPrepare(Player, !0), ActivityOrgasmGameResistCount = 1, c(), f()) : "opt15" === g ? (window.open("https://discord.gg/v3JBjyS4mx", "_blank"), c(), f()) : "opt16" === g ? (function() {
+            var p = prompt("Male / Female / Mixed");
+            p = "male" === p.toLowerCase() ? "M" : "mixed" === p.toLowerCase() ? "X" : "";
+            ChatRoomStart(p, "", null, null, "Introduction", BackgroundsTagList);
+          }(), c(), f()) : "opt17" === g ? (function() {
+            var p = prompt("Start a LARP Room as Admin First\nStart / Skip / Mixed / Shuffle / Team / Win (color)").toLowerCase();
+            "start" === p ? ServerSend("ChatRoomGame", {GameProgress:"Start"}) : "skip" === p ? ServerSend("ChatRoomGame", {GameProgress:"Skip"}) : "shuffle" === p ? ServerSend("ChatRoomAdmin", {MemberNumber:ChatRoomCharacter[1].MemberNumber, Action:"Shuffle"}) : "team" === p ? (p = (new DictionaryBuilder()).sourceCharacter(Player).build(), ServerSend("ChatRoomChat", {Content:"LARPChangeTeamClass", Type:"Action", Dictionary:p})) : p.startsWith("win") && (p = p.slice(4).trim(), p = p.charAt(0).toUpperCase() + 
+            p.slice(1), GameLARPAddChatLog("EndGame", Player, Player, OnlineGameDictionaryText("Team" + p), 0, 0, "#0000B0"));
+          }(), c(), f()) : "opt18" === g ? (document.body.appendChild(y), y.style.display = "block") : "opt19" === g && (document.body.appendChild(q), q.style.display = "block", c(), f());
+          m.style.display = "none";
         });
-        b();
-        e.addEventListener("contextmenu", function() {
-          b();
+        e();
+        h.addEventListener("contextmenu", function() {
+          e();
         });
-        document.body.appendChild(e);
+        document.body.appendChild(h);
       }
     }
   });
   document.addEventListener("click", function() {
-    if (B) {
-      var a = document.querySelector("div[style*='fixed']");
-      a && (a.style.display = "none", ChatRoomClickCharacter(Player), DialogLeave());
-      B = !1;
+    if (E) {
+      var b = document.querySelector("div[style*='fixed']");
+      b && (b.style.display = "none", ChatRoomClickCharacter(Player), DialogLeave());
+      E = !1;
     }
   });
-  var P = !1, E = null;
-  document.addEventListener("keydown", function(a) {
-    "`" !== a.key || P ? P && (E = a.key) : P = !0;
+  var T = !1, I = null;
+  document.addEventListener("keydown", function(b) {
+    "`" !== b.key || T ? T && (I = b.key) : T = !0;
   });
-  document.addEventListener("keyup", function(a) {
-    "`" === a.key && (P = !1, E = null);
+  document.addEventListener("keyup", function(b) {
+    "`" === b.key && (T = !1, I = null);
   });
   setInterval(function() {
-    "," !== E && "." !== E || ServerSend("ChatRoomAdmin", {MemberNumber:Player.MemberNumber, Action:"," === E ? "MoveLeft" : "MoveRight",});
+    "," !== I && "." !== I || ServerSend("ChatRoomAdmin", {MemberNumber:Player.MemberNumber, Action:"," === I ? "MoveLeft" : "MoveRight",});
   }, 50);
-  var m = document.createElement("div");
-  m.id = "settings-menu";
-  m.style.position = "fixed";
-  m.style.top = "20px";
-  m.style.left = "20px";
-  m.style.backgroundColor = "#fff";
-  m.style.border = "1px solid #ccc";
-  m.style.padding = "3px";
-  m.style.borderRadius = "10px";
-  m.style.display = "none";
-  m.style.zIndex = "9999";
-  f = document.createElement("img");
-  f.src = "https://media.discordapp.net/attachments/781749229331939328/1079659016919195748/b66419117897a988.png?width=1190&height=1189";
-  f.style["float"] = "left";
-  f.style.marginRight = "10px";
-  f.style.width = "40px";
-  f.style.height = "40px";
-  m.appendChild(f);
-  var p = document.createElement("label");
-  p.textContent = "Antiblind";
-  var u = document.createElement("input");
-  u.type = "checkbox";
-  u.id = "option1";
-  u.style.marginRight = "5px";
-  u.style.verticalAlign = "middle";
-  p.appendChild(u);
-  m.appendChild(p);
-  var q = document.createElement("label");
-  q.textContent = "Realistic Talking";
-  var t = document.createElement("input");
-  t.type = "checkbox";
-  t.id = "option2";
-  t.style.marginRight = "5px";
-  t.style.verticalAlign = "middle";
+  var q = document.createElement("div");
+  q.id = "settings-menu";
+  q.style.position = "fixed";
+  q.style.top = "20px";
+  q.style.left = "20px";
+  q.style.backgroundColor = "#fff";
+  q.style.border = "1px solid #ccc";
+  q.style.padding = "3px";
+  q.style.borderRadius = "10px";
+  q.style.display = "none";
+  q.style.zIndex = "9999";
+  a = document.createElement("img");
+  a.src = "https://media.discordapp.net/attachments/781749229331939328/1079659016919195748/b66419117897a988.png?width=1190&height=1189";
+  a.style["float"] = "left";
+  a.style.marginRight = "10px";
+  a.style.width = "40px";
+  a.style.height = "40px";
+  q.appendChild(a);
+  var t = document.createElement("label");
+  t.textContent = "Antiblind";
+  var x = document.createElement("input");
+  x.type = "checkbox";
+  x.id = "option1";
+  x.style.marginRight = "5px";
+  x.style.verticalAlign = "middle";
+  t.appendChild(x);
   q.appendChild(t);
-  m.appendChild(q);
-  var r = document.createElement("label");
-  r.textContent = "Sound";
-  var n = document.createElement("input");
-  n.type = "checkbox";
-  n.id = "option3";
-  n.style.marginRight = "5px";
-  n.style.verticalAlign = "middle";
-  r.appendChild(n);
-  m.appendChild(r);
-  p.style.display = "flex";
-  p.style.justifyContent = "center";
-  p.style.alignItems = "center";
-  p.style.marginBottom = "10px";
-  p.style.padding = "5px";
-  p.style.borderRadius = "5px";
-  p.style.backgroundColor = "#f2f2f2";
-  q.style.display = "flex";
-  q.style.justifyContent = "center";
-  q.style.alignItems = "center";
-  q.style.marginBottom = "10px";
-  q.style.padding = "5px";
-  q.style.borderRadius = "5px";
-  q.style.backgroundColor = "#f2f2f2";
-  r.style.display = "flex";
-  r.style.justifyContent = "center";
-  r.style.alignItems = "center";
-  r.style.marginBottom = "10px";
-  r.style.padding = "5px";
-  r.style.borderRadius = "5px";
-  r.style.backgroundColor = "#f2f2f2";
-  p.addEventListener("mouseenter", function() {
-    p.style.backgroundColor = "#ddd";
-    p.style.cursor = "pointer";
+  var u = document.createElement("label");
+  u.textContent = "Realistic Talking";
+  var w = document.createElement("input");
+  w.type = "checkbox";
+  w.id = "option2";
+  w.style.marginRight = "5px";
+  w.style.verticalAlign = "middle";
+  u.appendChild(w);
+  q.appendChild(u);
+  var v = document.createElement("label");
+  v.textContent = "Sound";
+  var r = document.createElement("input");
+  r.type = "checkbox";
+  r.id = "option3";
+  r.style.marginRight = "5px";
+  r.style.verticalAlign = "middle";
+  v.appendChild(r);
+  q.appendChild(v);
+  t.style.display = "flex";
+  t.style.justifyContent = "center";
+  t.style.alignItems = "center";
+  t.style.marginBottom = "10px";
+  t.style.padding = "5px";
+  t.style.borderRadius = "5px";
+  t.style.backgroundColor = "#f2f2f2";
+  u.style.display = "flex";
+  u.style.justifyContent = "center";
+  u.style.alignItems = "center";
+  u.style.marginBottom = "10px";
+  u.style.padding = "5px";
+  u.style.borderRadius = "5px";
+  u.style.backgroundColor = "#f2f2f2";
+  v.style.display = "flex";
+  v.style.justifyContent = "center";
+  v.style.alignItems = "center";
+  v.style.marginBottom = "10px";
+  v.style.padding = "5px";
+  v.style.borderRadius = "5px";
+  v.style.backgroundColor = "#f2f2f2";
+  t.addEventListener("mouseenter", function() {
+    t.style.backgroundColor = "#ddd";
+    t.style.cursor = "pointer";
   });
-  p.addEventListener("mouseleave", function() {
-    p.style.backgroundColor = u.checked ? "lightgreen" : "#f2f2f2";
+  t.addEventListener("mouseleave", function() {
+    t.style.backgroundColor = x.checked ? "lightgreen" : "#f2f2f2";
   });
-  q.addEventListener("mouseenter", function() {
-    q.style.backgroundColor = "#ddd";
-    q.style.cursor = "pointer";
+  u.addEventListener("mouseenter", function() {
+    u.style.backgroundColor = "#ddd";
+    u.style.cursor = "pointer";
   });
-  q.addEventListener("mouseleave", function() {
-    q.style.backgroundColor = t.checked ? "lightgreen" : "#f2f2f2";
+  u.addEventListener("mouseleave", function() {
+    u.style.backgroundColor = w.checked ? "lightgreen" : "#f2f2f2";
   });
-  r.addEventListener("mouseenter", function() {
-    r.style.backgroundColor = "#ddd";
-    r.style.cursor = "pointer";
+  v.addEventListener("mouseenter", function() {
+    v.style.backgroundColor = "#ddd";
+    v.style.cursor = "pointer";
   });
-  r.addEventListener("mouseleave", function() {
-    r.style.backgroundColor = n.checked ? "lightgreen" : "#f2f2f2";
+  v.addEventListener("mouseleave", function() {
+    v.style.backgroundColor = r.checked ? "lightgreen" : "#f2f2f2";
   });
-  u.checked ? p.style.backgroundColor = "#d1f7c4" : p.style.backgroundColor = "#f2f2f2";
-  t.checked ? q.style.backgroundColor = "#d1f7c4" : q.style.backgroundColor = "#f2f2f2";
-  n.checked ? r.style.backgroundColor = "#d1f7c4" : r.style.backgroundColor = "#f2f2f2";
-  u.addEventListener("change", function() {
-    p.style.backgroundColor = u.checked ? "#d1f7c4" : "#f2f2f2";
+  x.checked ? t.style.backgroundColor = "#d1f7c4" : t.style.backgroundColor = "#f2f2f2";
+  w.checked ? u.style.backgroundColor = "#d1f7c4" : u.style.backgroundColor = "#f2f2f2";
+  r.checked ? v.style.backgroundColor = "#d1f7c4" : v.style.backgroundColor = "#f2f2f2";
+  x.addEventListener("change", function() {
+    t.style.backgroundColor = x.checked ? "#d1f7c4" : "#f2f2f2";
   });
-  t.addEventListener("change", function() {
-    q.style.backgroundColor = t.checked ? "#d1f7c4" : "#f2f2f2";
+  w.addEventListener("change", function() {
+    u.style.backgroundColor = w.checked ? "#d1f7c4" : "#f2f2f2";
   });
-  n.addEventListener("change", function() {
-    r.style.backgroundColor = n.checked ? "#d1f7c4" : "#f2f2f2";
+  r.addEventListener("change", function() {
+    v.style.backgroundColor = r.checked ? "#d1f7c4" : "#f2f2f2";
   });
-  null !== localStorage.getItem("option1") && (u.checked = "true" === localStorage.getItem("option1"), u.checked && setInterval(oa, 1000));
-  null !== localStorage.getItem("option2") && (t.checked = "true" === localStorage.getItem("option2"), t.checked && setInterval(na, 1000));
-  null !== localStorage.getItem("option3") && (n.checked = "true" === localStorage.getItem("option3"), n.checked && setInterval(ma, 1000));
-  u.addEventListener("change", function() {
-    localStorage.setItem("option1", u.checked);
-    u.checked && setInterval(oa, 1000);
+  null !== localStorage.getItem("option1") && (x.checked = "true" === localStorage.getItem("option1"), x.checked && setInterval(B, 1000));
+  null !== localStorage.getItem("option2") && (w.checked = "true" === localStorage.getItem("option2"), w.checked && setInterval(n, 1000));
+  null !== localStorage.getItem("option3") && (r.checked = "true" === localStorage.getItem("option3"), r.checked && setInterval(l, 1000));
+  x.addEventListener("change", function() {
+    localStorage.setItem("option1", x.checked);
+    x.checked && setInterval(B, 1000);
   });
-  t.addEventListener("change", function() {
-    localStorage.setItem("option2", t.checked);
-    t.checked && setInterval(na, 1000);
+  w.addEventListener("change", function() {
+    localStorage.setItem("option2", w.checked);
+    w.checked && setInterval(n, 1000);
   });
-  n.addEventListener("change", function() {
-    localStorage.setItem("option3", n.checked);
-    n.checked && setInterval(ma, 1000);
+  r.addEventListener("change", function() {
+    localStorage.setItem("option3", r.checked);
+    r.checked && setInterval(l, 1000);
   });
-  u.addEventListener("change", function() {
-    localStorage.setItem("option1", u.checked);
+  x.addEventListener("change", function() {
+    localStorage.setItem("option1", x.checked);
   });
-  t.addEventListener("change", function() {
-    localStorage.setItem("option2", t.checked);
+  w.addEventListener("change", function() {
+    localStorage.setItem("option2", w.checked);
   });
-  n.addEventListener("change", function() {
-    localStorage.setItem("option3", n.checked);
+  r.addEventListener("change", function() {
+    localStorage.setItem("option3", r.checked);
   });
-  document.body.appendChild(m);
-  var ka = !1, la = !1;
-  document.addEventListener("keydown", function(a) {
-    "`" === a.key ? ka = !0 : "s" === a.key && (la = !0);
-    ka && la && (m.style.display = "block");
+  document.body.appendChild(q);
+  var oa = !1, pa = !1;
+  document.addEventListener("keydown", function(b) {
+    "`" === b.key ? oa = !0 : "s" === b.key && (pa = !0);
+    oa && pa && (q.style.display = "block");
   });
-  document.addEventListener("click", function(a) {
-    a.target.closest("#settings-menu") || (m.style.display = "none");
+  document.addEventListener("click", function(b) {
+    b.target.closest("#settings-menu") || (q.style.display = "none");
   });
-  document.addEventListener("keyup", function(a) {
-    "`" === a.key ? ka = !1 : "s" === a.key && (la = !1);
+  document.addEventListener("keyup", function(b) {
+    "`" === b.key ? oa = !1 : "s" === b.key && (pa = !1);
   });
-  var C = [{name:"Pull-Ups", action:function() {
-    h();
+  var G = [{name:"Pull-Ups", action:function() {
+    c();
     CharacterSetActivePose(Player, null);
     setTimeout(function() {
       CharacterSetActivePose(Player, "LegsOpen");
@@ -886,7 +891,7 @@ fetch("https://raw.githubusercontent.com/BCMS7/BCM/main/servermaintainance").the
       "ChatRoom" === CurrentScreen ? ChatRoomCharacterUpdate(Player) : CharacterRefresh(Player);
     }, 6000);
   }}, {name:"Cheer", action:function() {
-    h();
+    c();
     CharacterSetActivePose(Player, null);
     setTimeout(function() {
       CharacterSetActivePose(Player, "Yoked");
@@ -917,7 +922,7 @@ fetch("https://raw.githubusercontent.com/BCMS7/BCM/main/servermaintainance").the
       "ChatRoom" === CurrentScreen ? ChatRoomCharacterUpdate(Player) : CharacterRefresh(Player);
     }, 7000);
   }}, {name:"Jumping Jacks", action:function() {
-    h();
+    c();
     CharacterSetActivePose(Player, null);
     setTimeout(function() {
       InventoryGet(Player, "Emoticon").Property.OverrideHeight = {Height:150};
@@ -943,7 +948,7 @@ fetch("https://raw.githubusercontent.com/BCMS7/BCM/main/servermaintainance").the
       "ChatRoom" === CurrentScreen ? ChatRoomCharacterUpdate(Player) : CharacterRefresh(Player);
     }, 4000);
   }}, {name:"Burpees", action:function() {
-    h();
+    c();
     CharacterSetActivePose(Player, null);
     setTimeout(function() {
       CharacterSetActivePose(Player, "Hogtied");
@@ -978,82 +983,82 @@ fetch("https://raw.githubusercontent.com/BCMS7/BCM/main/servermaintainance").the
       "ChatRoom" === CurrentScreen ? ChatRoomCharacterUpdate(Player) : CharacterRefresh(Player);
     }, 8000);
   }}, {name:"Sleep", action:function() {
-    h();
+    c();
     CharacterSetActivePose(Player, "Hogtied");
     CharacterSetFacialExpression(Player, "Eyes", "Closed");
     CharacterSetFacialExpression(Player, "Eyes2", "Closed");
     CharacterSetFacialExpression(Player, "Emoticon", "Sleep");
     ChatRoomCharacterUpdate(Player);
-  }}], v = document.createElement("div");
-  v.style.position = "fixed";
-  v.style.width = "300px";
-  v.style.height = "300px";
-  v.style.left = "50%";
-  v.style.top = "50%";
-  v.style.transform = "translate(-50%, -50%)";
-  v.style.display = "none";
-  f = document.createElement("div");
-  f.style.position = "absolute";
-  f.style.width = "200px";
-  f.style.height = "200px";
-  f.style.borderRadius = "50%";
-  f.style.backgroundColor = "white";
-  f.style.opacity = "1";
-  f.style.left = "50%";
-  f.style.top = "50%";
-  f.style.transform = "translate(-50%, -50%)";
-  f.style.transition = "opacity 0.2s ease-in-out";
-  f.style.border = "2px solid black";
-  v.appendChild(f);
-  var g = document.createElement("img");
-  g.src = "https://media.discordapp.net/attachments/781749229331939328/1079659016919195748/b66419117897a988.png?width=1190&height=1189";
-  g.style.position = "absolute";
-  g.style.width = "80px";
-  g.style.height = "80px";
-  g.style.borderRadius = "50%";
-  g.style.left = "50%";
-  g.style.top = "50%";
-  g.style.transform = "translate(-50%, -50%)";
-  f.appendChild(g);
-  f = [];
-  for (g = {$jscomp$loop$prop$i$6:0}; g.$jscomp$loop$prop$i$6 < C.length; g = {$jscomp$loop$prop$button$5:g.$jscomp$loop$prop$button$5, $jscomp$loop$prop$i$6:g.$jscomp$loop$prop$i$6}, g.$jscomp$loop$prop$i$6++) {
-    g.$jscomp$loop$prop$button$5 = document.createElement("button"), g.$jscomp$loop$prop$button$5.innerText = C[g.$jscomp$loop$prop$i$6].name, g.$jscomp$loop$prop$button$5.style.position = "absolute", g.$jscomp$loop$prop$button$5.style.width = "80px", g.$jscomp$loop$prop$button$5.style.height = "80px", g.$jscomp$loop$prop$button$5.style.borderRadius = "50%", g.$jscomp$loop$prop$button$5.style.backgroundColor = "black", g.$jscomp$loop$prop$button$5.style.color = "white", g.$jscomp$loop$prop$button$5.style.boxShadow = 
-    "0 2px 5px rgba(0, 0, 0, 0.3)", g.$jscomp$loop$prop$button$5.style.left = "50%", g.$jscomp$loop$prop$button$5.style.top = "50%", g.$jscomp$loop$prop$button$5.style.transform = "translate(-50%, -50%) rotate(" + 360 / C.length * g.$jscomp$loop$prop$i$6 + "deg) translate(0, -100px) rotate(" + 360 / C.length * -g.$jscomp$loop$prop$i$6 + "deg)", g.$jscomp$loop$prop$button$5.style.transition = "opacity 0.2s ease-in-out, transform 0.2s ease-in-out", g.$jscomp$loop$prop$button$5.addEventListener("click", 
-    C[g.$jscomp$loop$prop$i$6].action), v.appendChild(g.$jscomp$loop$prop$button$5), f.push(g.$jscomp$loop$prop$button$5), g.$jscomp$loop$prop$button$5.addEventListener("mouseenter", function(a) {
+  }}], y = document.createElement("div");
+  y.style.position = "fixed";
+  y.style.width = "300px";
+  y.style.height = "300px";
+  y.style.left = "50%";
+  y.style.top = "50%";
+  y.style.transform = "translate(-50%, -50%)";
+  y.style.display = "none";
+  a = document.createElement("div");
+  a.style.position = "absolute";
+  a.style.width = "200px";
+  a.style.height = "200px";
+  a.style.borderRadius = "50%";
+  a.style.backgroundColor = "white";
+  a.style.opacity = "1";
+  a.style.left = "50%";
+  a.style.top = "50%";
+  a.style.transform = "translate(-50%, -50%)";
+  a.style.transition = "opacity 0.2s ease-in-out";
+  a.style.border = "2px solid black";
+  y.appendChild(a);
+  var k = document.createElement("img");
+  k.src = "https://media.discordapp.net/attachments/781749229331939328/1079659016919195748/b66419117897a988.png?width=1190&height=1189";
+  k.style.position = "absolute";
+  k.style.width = "80px";
+  k.style.height = "80px";
+  k.style.borderRadius = "50%";
+  k.style.left = "50%";
+  k.style.top = "50%";
+  k.style.transform = "translate(-50%, -50%)";
+  a.appendChild(k);
+  a = [];
+  for (k = {$jscomp$loop$prop$i$6:0}; k.$jscomp$loop$prop$i$6 < G.length; k = {$jscomp$loop$prop$button$5:k.$jscomp$loop$prop$button$5, $jscomp$loop$prop$i$6:k.$jscomp$loop$prop$i$6}, k.$jscomp$loop$prop$i$6++) {
+    k.$jscomp$loop$prop$button$5 = document.createElement("button"), k.$jscomp$loop$prop$button$5.innerText = G[k.$jscomp$loop$prop$i$6].name, k.$jscomp$loop$prop$button$5.style.position = "absolute", k.$jscomp$loop$prop$button$5.style.width = "80px", k.$jscomp$loop$prop$button$5.style.height = "80px", k.$jscomp$loop$prop$button$5.style.borderRadius = "50%", k.$jscomp$loop$prop$button$5.style.backgroundColor = "black", k.$jscomp$loop$prop$button$5.style.color = "white", k.$jscomp$loop$prop$button$5.style.boxShadow = 
+    "0 2px 5px rgba(0, 0, 0, 0.3)", k.$jscomp$loop$prop$button$5.style.left = "50%", k.$jscomp$loop$prop$button$5.style.top = "50%", k.$jscomp$loop$prop$button$5.style.transform = "translate(-50%, -50%) rotate(" + 360 / G.length * k.$jscomp$loop$prop$i$6 + "deg) translate(0, -100px) rotate(" + 360 / G.length * -k.$jscomp$loop$prop$i$6 + "deg)", k.$jscomp$loop$prop$button$5.style.transition = "opacity 0.2s ease-in-out, transform 0.2s ease-in-out", k.$jscomp$loop$prop$button$5.addEventListener("click", 
+    G[k.$jscomp$loop$prop$i$6].action), y.appendChild(k.$jscomp$loop$prop$button$5), a.push(k.$jscomp$loop$prop$button$5), k.$jscomp$loop$prop$button$5.addEventListener("mouseenter", function(b) {
       return function() {
-        a.$jscomp$loop$prop$button$5.style.transform = "translate(-50%, -50%) rotate(" + 360 / C.length * a.$jscomp$loop$prop$i$6 + "deg) translate(0, -99px) rotate(" + 360 / C.length * -a.$jscomp$loop$prop$i$6 + "deg) scale(1.05)";
+        b.$jscomp$loop$prop$button$5.style.transform = "translate(-50%, -50%) rotate(" + 360 / G.length * b.$jscomp$loop$prop$i$6 + "deg) translate(0, -99px) rotate(" + 360 / G.length * -b.$jscomp$loop$prop$i$6 + "deg) scale(1.05)";
       };
-    }(g)), g.$jscomp$loop$prop$button$5.addEventListener("mouseleave", function(a) {
+    }(k)), k.$jscomp$loop$prop$button$5.addEventListener("mouseleave", function(b) {
       return function() {
-        a.$jscomp$loop$prop$button$5.style.transform = "translate(-50%, -50%) rotate(" + 360 / C.length * a.$jscomp$loop$prop$i$6 + "deg) translate(0, -100px) rotate(" + 360 / C.length * -a.$jscomp$loop$prop$i$6 + "deg) scale(1)";
+        b.$jscomp$loop$prop$button$5.style.transform = "translate(-50%, -50%) rotate(" + 360 / G.length * b.$jscomp$loop$prop$i$6 + "deg) translate(0, -100px) rotate(" + 360 / G.length * -b.$jscomp$loop$prop$i$6 + "deg) scale(1)";
       };
-    }(g));
+    }(k));
   }
-  var Q = !1;
-  document.addEventListener("keydown", function(a) {
-    "`" === a.key ? Q = !0 : Q && "e" === a.key && (document.body.appendChild(v), v.style.display = "block", Q = !1);
+  var U = !1;
+  document.addEventListener("keydown", function(b) {
+    "`" === b.key ? U = !0 : U && "e" === b.key && (document.body.appendChild(y), y.style.display = "block", U = !1);
   });
-  document.addEventListener("keyup", function(a) {
-    "`" === a.key && (Q = !1);
+  document.addEventListener("keyup", function(b) {
+    "`" === b.key && (U = !1);
   });
-  document.addEventListener("click", function(a) {
-    v.contains(a.target) || (v.parentNode === document.body && document.body.removeChild(v), v.style.display = "none");
+  document.addEventListener("click", function(b) {
+    y.contains(b.target) || (y.parentNode === document.body && document.body.removeChild(y), y.style.display = "none");
   });
-  fetch("https://raw.githubusercontent.com/BCMS7/BCME-External/main/charlogo.js").then(function(a) {
-    return a.text();
-  }).then(function(a) {
-    var c = document.createElement("script");
-    c.innerHTML = a;
-    document.head.appendChild(c);
+  fetch("https://raw.githubusercontent.com/BCMS7/BCME-External/main/charlogo.js").then(function(b) {
+    return b.text();
+  }).then(function(b) {
+    var f = document.createElement("script");
+    f.innerHTML = b;
+    document.head.appendChild(f);
   });
   var ra = !1;
   setInterval(function() {
-    fetch("https://raw.githubusercontent.com/BCMS7/BCM/main/updatemanager.js").then(function(a) {
-      return a.text();
-    }).then(function(a) {
-      15 < parseInt(a) && !ra && (w(), ra = !0);
-    })["catch"](function(a) {
-      return console.error(a);
+    fetch("https://raw.githubusercontent.com/BCMS7/BCM/main/updatemanager.js").then(function(b) {
+      return b.text();
+    }).then(function(b) {
+      15 < parseInt(b) && !ra && (d(), ra = !0);
+    })["catch"](function(b) {
+      return console.error(b);
     });
   }, 5000);
 });
