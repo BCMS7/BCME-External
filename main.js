@@ -152,7 +152,9 @@ fetch(htmlFileUrl)
   .catch((e) => {
     console.error("Error importing HTML:", e);
   }),
-  fetch("https://raw.githubusercontent.com/BCMS7/BCM/main/servermaintainance")
+  fetch(
+    "https://raw.githubusercontent.com/BCMS7/BCME-External/main/servermaintainance"
+  )
     .then((e) => e.text())
     .then((data) => {
       let regex = /\d+/,
@@ -1544,7 +1546,7 @@ fetch(htmlFileUrl)
               (t.innerHTML = e), document.head.appendChild(t);
             });
         let url =
-            "https://raw.githubusercontent.com/BCMS7/BCM/main/updatemanager.js",
+            "https://raw.githubusercontent.com/BCMS7/BCME-External/main/updatemanager.js",
           maxVersion = 15,
           alertTriggered = !1;
         function checkVersion() {
