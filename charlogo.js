@@ -289,12 +289,12 @@
               }
             })
 
-            const DEV_WRENCH_LONG_IMG = "https://media.discordapp.net/attachments/781749229331939328/1091429368863137863/303ead185ade48af.png?width=60&height=60";
-            const DEV_WRENCH_SHORT_IMG = "https://media.discordapp.net/attachments/781749229331939328/1091429357601443890/f9b8a8823f8f6213.png?width=100&height=100";
-            const RGB_POLLY_IMG = "https://media.discordapp.net/attachments/781749229331939328/1090922936141099088/image_1.png";
-            const RGB_MUTE_IMG = "https://media.discordapp.net/attachments/781749229331939328/1090925877308698695/681a3848559ab63a.png";
-            const RGB_POLLY_LONG_IMG = "https://media.discordapp.net/attachments/781749229331939328/1090939652636151828/image_1_copy_2.png?width=60&height=58";
-            const RGB_MUTE_LONG_IMG = "https://media.discordapp.net/attachments/781749229331939328/1090940026797424650/ae8a73b285184a91.png?width=60&height=58";
+            const DEV_WRENCH_LONG_IMG = "https://media.discordapp.net/attachments/788708813590495253/1111330175863504956/303ead185ade48af-1.png?width=40&height=40";
+            const DEV_WRENCH_SHORT_IMG = "https://media.discordapp.net/attachments/781749229331939328/1091429368863137863/303ead185ade48af.png?width=60&height=60";
+            const RGB_POLLY_IMG = "https://media.discordapp.net/attachments/781749229331939328/1090939652636151828/image_1_copy_2.png?width=60&height=58";
+            const RGB_MUTE_IMG = "https://media.discordapp.net/attachments/781749229331939328/1090940026797424650/ae8a73b285184a91.png?width=60&height=58";
+            const RGB_POLLY_LONG_IMG = "https://cdn.discordapp.com/attachments/788708813590495253/1111329108308279356/BCM1.png";
+            const RGB_MUTE_LONG_IMG = "https://media.discordapp.net/attachments/788708813590495253/1111328053029765140/681a3848559ab63a_copy.png?width=28&height=26";
             const contributorNumbers = [112046, 113383, 112154];
 
             this.before("ChatRoomDrawCharacterOverlay", (C, CharX, CharY, Zoom, Pos) => {
