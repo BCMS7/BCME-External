@@ -335,7 +335,7 @@
             }
         },
         preloader() {
-            this.SDK = window.bcModSdk.registerMod({name:"BCME",fullName:"Bondage Club Mods Essentials",version:this.VERSION,repository:"https://bcm.site.live/bcme/"})
+            this.SDK = window.bcModSdk.registerMod({name:"BCME",fullName:"Bondage Club Mods Essentials",version:this.VERSION,repository:"https://bc-mods.com/"})
             this.before = (name, cb) => this.SDK.hookFunction(name, 0, (nextargs,next) => {try {cb?.(...nextargs)} catch (x) {console.error(x)} finally {return next(nextargs)}})
             this.after = (name, cb) => this.SDK.hookFunction(name, 0, (nextargs,next) => {const result = next(nextargs); try {cb?.(...nextargs)} catch (x) {console.error(x)} finally {return result}})
             if (window.CurrentModule && window.CurrentScreen && !("Character" === window.CurrentModule && "Login" === window.CurrentScreen)) return this.loader()
